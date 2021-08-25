@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import userLoginService from '../services/userLoginService';
+import LoginService from '../services/LoginService';
 
 const loginRouter = Router();
 
@@ -8,7 +8,7 @@ loginRouter.post('/', async (request, response) => {
   try {
     const { body } = request;
 
-    const usuario = await userLoginService(body);
+    const usuario = await LoginService(body);
 
     return response.json(usuario);
   } catch (e) {

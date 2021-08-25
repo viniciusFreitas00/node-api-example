@@ -8,11 +8,11 @@ interface Request {
 
 interface Response {
   id: number;
-  name: string;
+  nome: string;
   email: string;
 }
 
- async function userLoginService({
+ async function LoginService({
   email,
   senha,
 }: Request): Promise<Response> {
@@ -33,4 +33,4 @@ interface Response {
   return usuario;
 }
 
-export default userLoginService;
+export default LoginService;
