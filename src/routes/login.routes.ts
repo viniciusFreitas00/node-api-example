@@ -12,7 +12,7 @@ loginRouter.post('/', async (request, response) => {
 
     return response.json(usuario);
   } catch (e) {
-    return response.status(500).json({ message: e.message });
+    return response.status(401).json({ message: e.message });
   }
 });
 

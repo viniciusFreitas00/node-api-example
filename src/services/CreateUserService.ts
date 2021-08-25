@@ -18,6 +18,7 @@ async function CreateUserService({
   email,
   senha,
 }: Request): Promise<Response> {
+
   const userExists = await database.oneOrNone<Usuario>(
     'select * from usuario where email = $[email]',
     {
