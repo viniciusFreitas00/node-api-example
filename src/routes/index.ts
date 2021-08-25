@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import testeRouter from './teste.routes';
+import loginRouter from './login.routes'
 
 const routes = Router();
 
-routes.use('/teste', testeRouter);
+routes.use('/login', loginRouter);
 
 export default routes;
