@@ -2,8 +2,20 @@ import { Router } from 'express';
 
 import CreateUserService from '../services/CreateUserService';
 import UpdateUserService from '../services/UpdateUserService';
+import GetUsersService from '../services/GetUsersService';
 
 const userRouter = Router();
+
+userRouter.get('/', async (request, response) =>{
+  try {
+    const usuario = await GetUsersService();
+
+    return response.json(usuario);
+  } catch (e) {
+    return response.status(500).json({ message: e.message });
+  }
+
+})
 
 userRouter.post('/', async (request, response) => {
   try {
